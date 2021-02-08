@@ -40,7 +40,7 @@ function Index() {
                 notify();
               }
             else{
-                let notify = () => toast.dark("Product Successfuly Deleted");
+                let notify = () => toast.dark("Order Successfuly Deleted");
                 notify();
             }
           })
