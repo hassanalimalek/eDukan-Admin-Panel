@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+//Navbar
+
+.nav {
+  background: #1c2230;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+}
+
+.nav__container {
+  color: white;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+// Brand
+.brand {
+  font-family: "Lobster", cursive;
+  padding-top: 0.75rem;
+  color: white;
+  // letter-spacing: 0.15rem;
+  font-size: 1.6rem;
+  span {
+    color: #7dd5fd;
+  }
+}
+
+// Nav Rest Content
+
+.nav__content {
+  display: flex;
+  align-items: bottom;
+}
+.social_icons {
+  margin-right: 1rem;
+  li {
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+  }
+}
+
+// Product Cart Logo
+.productCart {
+  color: #7dd5fd;
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 2rem;
+  padding-top: 0.5rem;
+  .cartValue {
+    color: white;
+    background-color: #1c2230;
+    border-radius: 50%;
+    position: relative;
+    padding: 0.1rem 0.2rem;
+    top: -18px;
+    right: 20px;
+    font-size: 1.2rem;
+  }
+}
+
+// Button
+.generic_btn {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+// login btn
+.login_btn {
+  background: transparent;
+  color: #7dd5fd;
+  position: relative;
+  border: 1px solid white;
+  font-size: 1.1rem;
+  &:hover {
+    background-color: rgb(41, 41, 41);
+  }
+  .logoutIcon {
+    margin-left: 0.5rem;
+  }
+}

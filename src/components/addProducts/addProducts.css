@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap");
+
+/* Add Products  */
+
+.productMarkingImg {
+  width: 48%;
+}
+.productMarkingImg img {
+  width: 100%;
+  box-shadow: var(--light_shadow);
+  transition: var(--mainTransition);
+}
+
+.form_shadow {
+  box-shadow: var(--light_shadow);
+  transition: var(--mainTransition);
+}
+
+@media (max-width: 768px) {
+  .addProductsContainer {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .addProductsContainer form {
+    width: 100%;
+    order: 1;
+    margin: 0 !important;
+  }
+  .productMarkingImg {
+    width: 100%;
+    order: -1;
+    margin-bottom: 0.5rem;
+
+    /* height: 40vh; */
+  }
+}

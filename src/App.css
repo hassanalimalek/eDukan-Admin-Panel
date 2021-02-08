@@ -1,5 +1,13 @@
+:root {
+  --light_shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.25);
+  --dark_shadow: 4px 5px 3px 0 rgba(0, 0, 0, 0.5);
+  --mainTransition: all 0.3s linear;
+}
 .App {
   text-align: center;
+}
+a:hover {
+  text-decoration: none !important;
 }
 
 .App-logo {
@@ -26,6 +34,69 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.check {
+  background: purple;
+  color: orange;
+}
+ul {
+  list-style-type: none;
+}
+ul li {
+  display: inline-block;
+}
+/* // Social icons */
+.social_icons {
+  margin-right: 1rem;
+}
+.social_icon li {
+  margin-right: 1rem;
+  padding-top: 0.1rem;
+}
+.social_icon {
+  font-size: 1.5rem;
+  padding-top: 0.2rem;
+  height: 100%;
+}
+.fb_icon:hover {
+  color: #3b5998;
+}
+.twitter_icon:hover {
+  color: #00acee;
+}
+.insta_icon:hover {
+  color: #fbad50;
+}
+
+/* Add and Edit Products Container */
+.addProducts,
+.editProducts {
+  margin-bottom: 5rem;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.05rem;
+}
+
+.addProductsContainer,
+.editProductsContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  padding-right: 2em;
+}
+.addProductsContainer form {
+  width: 50%;
+}
+.editProductImg {
+  width: 35%;
+}
+
+/* Button */
+.generic_btn {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {

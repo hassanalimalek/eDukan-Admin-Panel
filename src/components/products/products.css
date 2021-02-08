@@ -1,0 +1,16 @@
+/* Products */
+.backArrow {
+  border: none;
+  background-color: transparent;
+  font-size: 2.5rem;
+  margin: 0.5rem;
+  color: black;
+}
+
+.product_list {
+  box-shadow: var(--light_shadow);
+  transition: var(--mainTransition);
+}
+.product_list:hover {
+  box-shadow: var(--dark_shadow);
+}
