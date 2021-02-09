@@ -59,9 +59,8 @@ function Index() {
         }
         else{
             setOrdersArr(false)
-        }
-        
-    })
+        }  
+      })
     }
     getOrders();
     

@@ -1,26 +1,25 @@
 import React from 'react'
+import { useEffect } from 'react'
 import './mainLogin.css'
-import { auth } from '../../firebase'
+import { auth,db } from '../../firebase'
 // Toast
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Slide } from 'react-toastify'
+
  
-function index() {
+function Index() {
+
+    useEffect(()=>{
+        auth.signOut();
+    })
 
     let loginSubmit=(e)=>{
         e.preventDefault();
+  
         let [username,password] = [e.target.username.value,e.target.password.value]
-        auth.signInWithEmailAndPassword(username,password).then((u)=>{
-        }).catch((err)=>{
-            console.log(err)
-            let msg = "Error";
-            if (err.code === "auth/user-not-found"){
-                msg = "Wrong Username or Password"
-            }
-            else if (err.code === "auth/invalid-email"){
-                msg = "Invalid Email Format"
-            }
+
+        let errNotify = (msg)=>{
             let notify = () => toast.error(msg,{
                 position: "top-right",
                 autoClose: 1500,
@@ -29,7 +28,37 @@ function index() {
                 draggable: true,
                 });
             notify();
-        })
+        }
+
+        let login = async()=>{
+            db.ref('userRoles').on('value',snapshot=>{
+            console.log("Get Orders ")
+            if(snapshot.val()!=null){
+                let result = snapshot.val()
+                let checkEmail = Object.values(result)[0].email
+                let role =  Object.values(result)[0].role
+                if (username === checkEmail && role === "admin"){
+                    auth.signInWithEmailAndPassword(username,password).then((u)=>{
+                    }).catch((err)=>{
+                        let msg = "Error";
+                        if (err.code === "auth/user-not-found" || err.code==="auth/wrong-password"){
+                            msg = "Wrong Username or Password"
+                        }
+                        else if (err.code === "auth/invalid-email"){
+                            msg = "Invalid Email Format"
+                        }
+                        errNotify(msg)
+                    })
+                 }
+                 else{
+                     errNotify("Wrong Username or Password")
+                 }
+            }
+          })
+        }
+        login();
+
+     
     }
 
     return (
@@ -58,4 +87,4 @@ function index() {
     )
 }
 
-export default index
+export default Index

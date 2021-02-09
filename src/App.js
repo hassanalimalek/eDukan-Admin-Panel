@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter,Route } from 'react-router-dom'
-import { useState,useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 import Products from './components/products'
 import Orders from './components/orders'
@@ -20,9 +20,6 @@ function App(props) {
   
   let [user,setUser] = useState(false);
 
-  useEffect(()=>{
-     auth.signOut();
-  })
 
   auth.onAuthStateChanged((user)=>{
     if(user){setUser(user)}
